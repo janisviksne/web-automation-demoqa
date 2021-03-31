@@ -12,16 +12,16 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("/webtables")
 public class WebTablesPage extends ElementsPage {
   // Locators ----------------------------------------------------------------------------------------------------------
-  public static By WEB_TABLES_TITLE;
-  public static By ADD_BUTTON ;
+  public static By WEB_TABLES_TITLE = text("Web Tables");
+  public static By ADD_BUTTON = css("button[id='addNewRecordButton']");
   // When user clicks add button, multiple input fields are given
-  public static By AGE_FIELD;
-  public static By SALARY_FIELD;
-  public static By DEPARTMENT_FIELD;
+  public static By AGE_FIELD = css("input[id='age']");
+  public static By SALARY_FIELD = css("input[id='salary']");
+  public static By DEPARTMENT_FIELD = css("input[id='department']");
   // Search field on the right side;
-  public static By SEARCH_FIELD;
+  public static By SEARCH_FIELD = id("searchBox");
   // Find a selector that represents rows, should be total of 10
-  public static By TABLE_ROW;
+  public static By TABLE_ROW = css("select[aria-label='rows per page']");
   // Public methods ----------------------------------------------------------------------------------------------------
   public void waitForPageToLoad() {
     getElement(WEB_TABLES_TITLE).waitUntilPresent();

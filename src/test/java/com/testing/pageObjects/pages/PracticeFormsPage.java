@@ -12,22 +12,22 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("/automation-practice-form")
 public class PracticeFormsPage extends FormsPage{
   // Locators ----------------------------------------------------------------------------------------------------------
-  public static By MOBILE_NUMBER_FIELD;
-  public static By SUBJECT_FIELD;
-  public static By MALE_RADIO_BUTTON;
-  public static By FEMALE_RADIO_BUTTON;
-  public static By OTHER_RADIO_BUTTON;
-  public static By SPORTS_CHECKBOX;
-  public static By READING_CHECKBOX;
-  public static By MUSIC_CHECKBOX;
-  public static By STATE_FIELD;
-  public static By CITY_FIELD;
-  public static By SUBJECTS_MENU;
+  public static By MOBILE_NUMBER_FIELD = css("input[id='userNumber']");
+  public static By SUBJECT_FIELD = css("input[id='subjectsInput']");
+  public static By MALE_RADIO_BUTTON = css("input[id='gender-radio-1']");
+  public static By FEMALE_RADIO_BUTTON = css("input[id='gender-radio-2']");
+  public static By OTHER_RADIO_BUTTON= css("input[id='gender-radio-3']");
+  public static By SPORTS_CHECKBOX = css("input[id='hobbies-checkbox-1']");
+  public static By READING_CHECKBOX = css("input[id='hobbies-checkbox-2']");
+  public static By MUSIC_CHECKBOX = css("input[id='hobbies-checkbox-3']");
+  public static By STATE_FIELD = css("div[id='state']");;
+  public static By CITY_FIELD = css("div[id='city']");;
+  public static By SUBJECTS_MENU= css("div[id='subjectsContainer']");
   // After user clicks submit button, a dialog box containing rows with information is shown to user,
   // find selector for rows only without the first "Title" row. Should be around total of 10.
-  public static By TABLE_ROW;
-  public static By DATE_OF_BIRTH;
-  public static By UPLOAD_PICTURE;
+  public static By TABLE_ROW = css("tbody tr");
+  public static By DATE_OF_BIRTH = css("input[id='dateOfBirthInput']");
+  public static By UPLOAD_PICTURE = css("input[id='uploadPicture']");
   // Public methods ----------------------------------------------------------------------------------------------------
   public void waitForPageToLoad() {
     getElement(FORMS).waitUntilPresent();
